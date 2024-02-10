@@ -2,7 +2,11 @@
 
 {% block content %}
  <div class="text-center">
-	<h1>Phishing Email Classification</h1>
-  {% include 'prediction_form.html' %}
+	  <h1>Phishing Email Classification</h1>
+    {% include 'prediction_form.html' %}
+
+    {% if prediction!= None %}
+      <h2>Prediction Result: {{ prediction }}</h2>
+    {% endif %}
  </div>
 {% endblock %}
