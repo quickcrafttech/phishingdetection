@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, request, render_template, redirect
 from model import Classifier
 from model_utils import Model_Utils
@@ -7,7 +8,7 @@ app = Flask(__name__)
 model = Classifier()
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=['GET','POST'])
 def index():
     prediction = None
     if request.method == "POST":
