@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask, request, render_template, redirect
 from model import Classifier
 from model_utils import Model_Utils
@@ -31,4 +30,4 @@ def index():
 
 if __name__ == "__main__":
     Model_Utils.download_lib()
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
