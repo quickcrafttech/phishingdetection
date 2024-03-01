@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask, request, render_template, redirect
 from model import Classifier
 from model_utils import Model_Utils
