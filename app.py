@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 # Load the spam classification model (assuming it's already trained)
 model = Classifier()
+Model_Utils.download_lib()
 
 # Define the main route ("/") handling both GET and POST requests
 @app.route("/", methods=['GET', 'POST'])
@@ -45,10 +46,11 @@ def index():
         return render_template("index.html", prediction=None)
 
 # Run the Flask application when executed directly
-if __name__ == "__main__":
-    # Perform any model-related setup tasks using Model_Utils (if applicable)
-    # Example: Downloading required libraries or loading pre-trained models
-    Model_Utils.download_lib()
+# Remove main driver function for production
+# if __name__ == "__main__":
+#     # Perform any model-related setup tasks using Model_Utils (if applicable)
+#     # Example: Downloading required libraries or loading pre-trained models
+#     Model_Utils.download_lib()
 
-    # Start the Flask application in debug mode, accessible by any device on the network
-    app.run(debug=True, host='0.0.0.0')
+#     # Start the Flask application in debug mode, accessible by any device on the network
+#     app.run(debug=True, host='0.0.0.0')
